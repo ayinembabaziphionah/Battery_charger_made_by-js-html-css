@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background:linear-gradient(75deg,#2193b0,#556B2F);
+    background-repeat: no-repeat;
+    height: 100vh;
+    user-select:none;
+}
+#body{
+    width:180px;
+    position: relative;
+    top:100px;
+    left: 80px;
+    height:320px;
+    background:whitesmoke;
+    border-radius: 20px;
+    transition:background 3s;
+}
+#screen{
+    position: absolute;
+    top:15px;
+    left:10px;
+    width:160px;
+    height:290px;
+    background:#222;
+}
+#camera1{
+    width:12px;
+    top:1.5px;
+    left:85px;
+    position: absolute;
+    height: 12px;
+    border-radius:6px;
+    background: #aaa;
+}
+#camera2{
+    position: absolute;
+    width:5px;
+    height: 5px;
+    top:3px;
+    left:3px;
+    border-radius: 2.5px;
+    background: #000;
+}
+    #msg{
+        color:wheat;
+        position:absolute;
+        font-size: 8vh;
+        top:80px;
+        text-align: center;
+            }
+            #button{
+                position: absolute;
+                top:460px;
+                left:140px;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background:linear-gradient(120deg,#f6d365 0%,#fda085 100%);
+                text-align: center;
+                padding-top: 25px;
+                font-size: 4vh;
+                color:firebrick;
+                animation:sc 2s ease infinite;
+            }
+            @keyframes sc{
+                50%{
+                    font-size:5vh;
+                }
+            }
+            .s{
+                animation:shaking 1s ease infinite;
+            }
+           @keyframes shaking {
+                0%{
+                    transform: translate(0);
+                }
+                20%,40%,60%,80%{
+                    transform: translate(0.5em);
+                    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+                }
+                10%,30%,50%,90%{
+                    transform: translate(-0.5em);
+                }
+                100%{
+                    transform: translate(0);
+                }
+            }
+            #status{
+                width:100%;
+                position:absolute;
+                top:30px;
+                text-align:center;
+                font-size:8vh;
+                color:#959;
+            }
+            .cover{
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:100;
+                width:100%;
+                height:110vh;
+                background:black;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                font-size:3vh;
+                animation:scale 7s ease;
+                color:white;
+                animation-fill-mode:forwards;
+            }
+            @keyframes scale{
+                80%{
+                    font-size:30vh;
+                    letter-spacing:35px;
+                }
+                100%{
+                    font-size:0;
+                }
+            }
+            #battery{
+                position:absolute;
+                width:100%;
+                text-align:right;
+                color:white;
+                font-size:10px;
+                top:0;
+            }

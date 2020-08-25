@@ -1,0 +1,114 @@
+<html><head> 
+  <meta charset="UTF-8"> 
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>blast</title>
+  </head> 
+ <body> 
+  <audio src="https://www.dropbox.com/s/01682gqzad54zkq/Explosion%2B9.mp3?raw=1" id="exp" preload="auto"></audio> 
+  <div id="body"> 
+   <div id="screen"> 
+    <div id="battery"></div> 
+    <div id="msg">
+     Hello🙂
+    </div> 
+   </div> 
+   <div id="camera1"> 
+    <div id="camera2"></div> 
+   </div> 
+  </div> 
+  <div id="status">
+   Hold
+  </div> 
+  <div id="button" ontouchstart="start()" ontouchend="end()">
+   Blast
+  </div> 
+  <div id="a"></div> 
+  <div id="cover"></div> 
+  <script>
+  	alert("press hold button for 10 second and then leave")
+alert("after leaving cancel the drop down menu")
+alert("Made by Phionah")
+      var a=setInterval(a1,1000);
+            function a1(){
+            navigator.getBattery().then(function(battery){
+                var scr=document.getElementById("battery");
+                var val;
+                val=battery.level*100;
+                scr.innerHTML=Math.round(val)+"%";
+            });}
+        var t1;
+        var s;
+        var t4;
+        var msg=document.getElementById("msg");
+        var bac=document.getElementById("body");
+        var but=document.getElementById("button");
+        function start(){
+            t1 = new Date().getTime();
+            s=setInterval(diff,1000);
+            but.style.animationDuration="0s";
+        }
+        function diff(){
+            var t2;
+            t2=new Date().getTime();
+            t4=t2-t1;
+            if(t4>=0 && t4<3000){
+                round1();
+            }
+            else if(t4>=3000 && t4<6000){
+                round2();
+            }
+            else if(t4>=6000 && t4<9000){
+                round3();
+            }
+            else if(t4>=9000 && t4<10000){
+                round4();
+            }
+            else if(t4>10000){
+                document.getElementById("status").innerHTML="Leave"
+            }
+        }
+        function round1(){
+            msg.innerHTML="STOP 😠";
+            bac.style.background="orange";
+            bac.classList.add("s");
+            window.navigator.vibrate([1000,500,2000,500,2000]);
+        }
+        function round2(){
+            msg.innerHTML="It hurts😰";
+            bac.style.background="#f66";
+            
+        }
+        function round3(){
+            msg.innerHTML="Please😟";
+            bac.style.background="#ff4500";
+            bac.style.animationDuration="0.6s";
+            
+        }
+        function round4(){
+            msg.innerHTML="Noooo..😣";
+            bac.style.background="#a00";
+            bac.style.animationDuration="0.3s";
+        }
+        function end(){
+        but.style.animationDuration="2s";
+        clearInterval(s);
+        if(t4<10000){
+            bac.style.animationDuration="1s";
+            t1=undefined;
+            msg.innerHTML="thanks☺️";
+            bac.style.background="whitesmoke";
+            window.navigator.vibrate(0);
+            bac.classList.remove("s");
+        }
+        else if(t4>10000){
+                            var e=document.getElementById("exp");
+            e.play();
+            var s=document.getElementById("cover");
+            s.classList.add("cover");
+            s.innerHTML="💥";
+            }
+        }
+    </script> 
+ 
+</body></html>
